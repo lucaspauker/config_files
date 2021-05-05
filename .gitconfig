@@ -1,0 +1,11 @@
+[core]
+repositoryformatversion = 0
+filemode = true
+bare = false
+logallrefupdates = true
+ignorecase = true
+precomposeunicode = true
+
+[user]
+	name = Lucas Pauker
+	email = lucas.pauker@gmail.com
