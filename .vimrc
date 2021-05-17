@@ -1,22 +1,22 @@
 syntax enable
-"let g:solarized_termcolors=256
-"set background=dark
-"colorscheme solarized
- 
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
 map <Space> <leader>
- 
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
+
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
 inoremap <C-g> <Esc>/[)}"'\]>]<CR>:nohl<CR>a
- 
+
 nnoremap <C-h> ^
 nnoremap <C-l> $
 nnoremap <C-j> 5j
 nnoremap <C-k> 5k
 nnoremap ; :
- 
-au BufRead,BufEnter,BufNewFile *.txt,*.md setf filetype=text
+
+au BufRead,BufEnter,BufNewFile *.txt setf filetype=text
 au FileType text hi Italics cterm=italic gui=italic
 "au FileType text inoremap <Space><Space> .<Space>
 "au FileType text syn match Italics "\/[^*]\+\/" contains=Italics "Legacy
@@ -46,7 +46,7 @@ au FileType text syn match Subtitle "^##[^*]\+" contains=Asterisks
 au FileType text hi Strike ctermbg=darkred ctermfg=blue
 au FileType text syn match Strike "\~.*\~"
 noh
- 
+
 set mouse=a
 set tabstop=2
 set shiftwidth=2
@@ -67,29 +67,65 @@ set number
 set lazyredraw " redraw only when we need to
 set showmatch " shows matching [({})]
 set shellpipe=>
- 
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
- 
+
 let g:ack_use_dispatch=0
 let maplocalleader = "\\"
- 
+
 map <C-n> :NERDTreeToggle<CR>
 nmap <C-t> :TagbarToggle<CR>
- 
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
- 
+
 " set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"let g:org_agenda_files=['~/Documents/fun/todo.org']
- 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+let g:org_agenda_files=['~/Documents/fun/todo.org']
+
 "set concealcursor=n
 "set conceallevel=3
- 
+
 map <leader>vimrc :tabe ~/.vimrc<cr>
 augroup reload_vimrc
   au!
   au BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-endwise'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'majutsushi/tagbar'
+Plugin 'itchyny/lightline.vim'
+Plugin 'simeji/winresizer'
+Plugin 'ervandew/supertab'
+Plugin 'pangloss/vim-javascript'
+Plugin 'lervag/vimtex'
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
+Plugin 'mattn/calendar-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+call feedkeys(":e\<cr>")

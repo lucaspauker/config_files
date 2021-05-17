@@ -74,34 +74,34 @@ bind -x '"\C-t": reset'
 alias del="rmtrash"
 alias server="ssh 104.131.121.192"
  
-#export TERM="xterm-256color"
-# 
+export TERM="xterm-256color"
+ 
 #[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 #eval "$(rbenv init -)"
 # 
 #if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #. $(brew --prefix)/etc/bash_completion
 #fi
-# 
-## Setting PATH for Python 3.7
-## The original version is saved in .bash_profile.pysave
-#PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-#export PATH
-# 
-#export PATH="$HOME/.cargo/bin:$PATH"
-#export PATH=$PATH:~/bin
-# 
-#. /Users/lucaspauker/torch/install/bin/torch-activate
-# 
-# 
-## The next line updates PATH for the Google Cloud SDK.
-#if [ -f '/Users/lucaspauker/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lucaspauker/Downloads/google-cloud-sdk/path.bash.inc'; fi
-# 
-## The next line enables shell command completion for gcloud.
-#if [ -f '/Users/lucaspauker/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/lucaspauker/Downloads/google-cloud-sdk/completion.bash.inc'; fi
-# 
-## >>> conda initialize >>>
-## !! Contents within this block are managed by 'conda init' !!
+ 
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+ 
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:~/bin
+ 
+. /Users/lucaspauker/torch/install/bin/torch-activate
+ 
+ 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lucaspauker/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/lucaspauker/Downloads/google-cloud-sdk/path.bash.inc'; fi
+ 
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lucaspauker/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/lucaspauker/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+ 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/lucaspauker/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -112,9 +112,9 @@ else
         export PATH="/Users/lucaspauker/anaconda3/bin:$PATH"
     fi
 fi
-#unset __conda_setup
-## <<< conda initialize <<<
+unset __conda_setup
+# <<< conda initialize <<<
  
 export PATH="/Users/lucaspauker/anaconda3/bin:$PATH"
  
-#test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
